@@ -7,6 +7,14 @@
 //
 
 import UIKit
+import RealmSwiftsetSchemaVersion(1, Realm.defaultPath, { migration, oldSchemaVersion in
+    // We haven’t migrated anything yet, so oldSchemaVersion == 0
+    if oldSchemaVersion < 1 {
+        // Nothing to do!
+        // Realm will automatically detect new properties and removed properties
+        // And will update the schema on disk automatically
+    }
+})
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        setSchemaVersion(1, Realm.defaultPath, { migration, oldSchemaVersion in
+            // We haven’t migrated anything yet, so oldSchemaVersion == 0
+            if oldSchemaVersion < 1 {
+                // Nothing to do!
+                // Realm will automatically detect new properties and removed properties
+                // And will update the schema on disk automatically
+            }
+        })
         return true
     }
 
