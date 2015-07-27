@@ -29,9 +29,9 @@ class PersonCell: UITableViewCell {
         didSet {
             if let person = person, nameLabel = nameLabel, personImage = personImage {
                 self.nameLabel.text = person.name
-                /*if let image = person.photo {
-                    self.personImage.image = person.photo!
-                }*/
+                if let image = person.photo {
+                    self.personImage.image = UIImage(data: person.photo!)
+                }
             }
             else {
                 self.nameLabel.text = "error"

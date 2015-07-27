@@ -44,17 +44,16 @@ class PersonViewController: UIViewController {
         if let person = person , personNameLabel = personNameLabel, personInfoTextView = personInfoTextView, personImageView = personImageView {
             self.personNameLabel.text = person.name
             self.personInfoTextView.text = person.info
-            /*if let image = person.photo {
-                self.personImageView.image = person.photo
-            }*/
+            if let image = person.photo {
+                self.personImageView.image = UIImage(data: person.photo!)
+            }
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "editPerson" {
             let editPersonViewController = segue.destinationViewController as! EditPersonViewController
-            editPersonViewController.person = self.person
-        }
+            editPersonViewController.person = self.person        }
     }
     
     /*

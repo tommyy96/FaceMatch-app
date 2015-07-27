@@ -1,3 +1,4 @@
+
 //
 //  NewPersonViewController.swift
 //  App
@@ -17,23 +18,27 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
     @IBOutlet weak var infoTextView: UITextView!
     @IBOutlet weak var personImage: UIImageView!
     
-    var person: Person? {
-        didSet {
-            displayPerson(person)
-        }
-    }
+    var person: Person?
     
     var imagePicker: UIImagePickerController!
+    
+    var showedPicture = false
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        displayPerson(self.person)
-        
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        displayPerson(self.person)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -43,9 +48,15 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
     }
     
     func displayPerson(person: Person?) {
-        if let person = person, nameTextField = nameTextField, infoTextView = infoTextView {
+        if let person = person, nameTextField = nameTextField, infoTextView = infoTextView, personImage = personImage {
             nameTextField.text = person.name
             infoTextView.text = person.info
+            if let image = person.photo {
+                if !showedPicture {
+                    personImage.image = UIImage(data: person.photo!)
+                    showedPicture = true
+                }
+            }
         }
         else {
             self.person = Person()
@@ -54,29 +65,51 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
     
     @IBAction func doneEditingButtonPressed(sender: AnyObject) {
         let realm = Realm()
-        if nameTextField.text != "" || infoTextView.text != "" {
-            person!.name = nameTextField.text
-            person!.info = infoTextView.text
-            /*if let image = personImage.image {
-                person!.photo = personImage.image
-            }*/
-            realm.write() {
-                realm.add(self.person!)
+        if nameTextField.text != "" && infoTextView.text != "" {
+            if person!.newPerson {
+                self.person!.name = nameTextField.text
+                self.person!.info = infoTextView.text
+                self.person!.newPerson = false
+                if let image = personImage.image {
+                    self.person!.photo = UIImagePNGRepresentation(personImage.image)
+                }
+                realm.write() {
+                    realm.add(self.person!)
+                }
             }
+            else {
+                realm.write(){
+                    self.person!.name = self.nameTextField.text
+                    self.person!.info = self.infoTextView.text
+                    if let image = self.personImage.image {
+                        self.person!.photo = UIImagePNGRepresentation(self.personImage.image)
+                    }
+
+                }
+            }
+            navigationController?.popToRootViewControllerAnimated(true)
         }
-        navigationController?.popToRootViewControllerAnimated(false)
     }
     
     @IBAction func takePhoto(sender: UIButton) {
-        imagePicker =  UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .Camera
-        
-        presentViewController(imagePicker, animated: true, completion: nil)
+        let realm = Realm()
+        realm.write(){
+            if let name = self.nameTextField.text {
+                self.person!.name = self.nameTextField.text
+            }
+            if let info = self.infoTextView.text {
+                self.person!.info = self.infoTextView.text
+            }
+        }
+        self.imagePicker =  UIImagePickerController()
+        self.imagePicker.delegate = self
+        self.imagePicker.sourceType = .Camera
+        self.presentViewController(self.imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        displayPerson(self.person)
         personImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
     
