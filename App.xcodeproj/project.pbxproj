@@ -15,6 +15,8 @@
 		3B83E4531B5719270037857E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B83E4521B5719270037857E /* Images.xcassets */; };
 		3B83E4561B5719270037857E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B83E4541B5719270037857E /* LaunchScreen.xib */; };
 		3B83E4621B5719270037857E /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B83E4611B5719270037857E /* AppTests.swift */; };
+		3B8ED97C1B699AFE007E6A57 /* FlashcardQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8ED97B1B699AFE007E6A57 /* FlashcardQuizViewController.swift */; };
+		3B8ED97E1B699B09007E6A57 /* MatchingQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8ED97D1B699B09007E6A57 /* MatchingQuizViewController.swift */; };
 		3BBDAA541B597A2D0026D0B8 /* EditPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBDAA531B597A2D0026D0B8 /* EditPersonViewController.swift */; };
 		3BBDAA571B5982660026D0B8 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBDAA561B5982660026D0B8 /* PersonCell.swift */; };
 		3BDA873D1B5997AC000344F0 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA873C1B5997AC000344F0 /* PersonViewController.swift */; };
@@ -45,6 +47,8 @@
 		3B83E45B1B5719270037857E /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B83E4601B5719270037857E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B83E4611B5719270037857E /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
+		3B8ED97B1B699AFE007E6A57 /* FlashcardQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcardQuizViewController.swift; sourceTree = "<group>"; };
+		3B8ED97D1B699B09007E6A57 /* MatchingQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingQuizViewController.swift; sourceTree = "<group>"; };
 		3BBDAA531B597A2D0026D0B8 /* EditPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPersonViewController.swift; sourceTree = "<group>"; };
 		3BBDAA561B5982660026D0B8 /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		3BDA873C1B5997AC000344F0 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 				3BBDAA531B597A2D0026D0B8 /* EditPersonViewController.swift */,
 				3BDA873C1B5997AC000344F0 /* PersonViewController.swift */,
 				3B2B4CFA1B669AE4007876F4 /* QuizSelectorViewController.swift */,
+				3B8ED97B1B699AFE007E6A57 /* FlashcardQuizViewController.swift */,
+				3B8ED97D1B699B09007E6A57 /* MatchingQuizViewController.swift */,
 			);
 			name = "View Controllers";
 			path = "App/View Controllers";
@@ -334,6 +340,8 @@
 				3B2B4CFB1B669AE4007876F4 /* QuizSelectorViewController.swift in Sources */,
 				3BDA873D1B5997AC000344F0 /* PersonViewController.swift in Sources */,
 				3BBDAA571B5982660026D0B8 /* PersonCell.swift in Sources */,
+				3B8ED97C1B699AFE007E6A57 /* FlashcardQuizViewController.swift in Sources */,
+				3B8ED97E1B699B09007E6A57 /* MatchingQuizViewController.swift in Sources */,
 				3B3ED1721B58133200E70BDC /* Person.swift in Sources */,
 				3B3ED16B1B580F6500E70BDC /* PersonListTableViewController.swift in Sources */,
 				3B83E44C1B5719270037857E /* AppDelegate.swift in Sources */,

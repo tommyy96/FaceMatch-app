@@ -7,16 +7,28 @@
 //
 
 import UIKit
+import RealmSwift
 
-class QuizSelectorViewController: UIViewController {
+class QuizSelectorViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var quizSelectorPickerView: UIPickerView!
     @IBOutlet weak var donePickingButton: UIButton!
     
+    let pickerData = ["Matching Quiz", "Flashcard Quiz"]
+    
+    var chosenQuiz: String = "Matching Quiz"
+    var people: Results<Person>!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let realm = Realm()
+        quizSelectorPickerView.dataSource = self
+        quizSelectorPickerView.delegate = self
+        people = realm.objects(Person)
+        if people.count <= 1 {
+           performSegueWithIdentifier("noPeopleInList", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,9 +36,30 @@ class QuizSelectorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func donePickingButonPressed(sender: AnyObject) {
-        
+    @IBAction func donePickingButtonPressed(sender: AnyObject) {
+        if(chosenQuiz == pickerData[0]) {
+            performSegueWithIdentifier("pickerToMatchingQuiz", sender: self)
+        }
+        else if(chosenQuiz == pickerData[1])  {
+            performSegueWithIdentifier("pickerToFlashcardQuiz", sender: self)
+        }
     }
+
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return pickerData[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+         chosenQuiz = pickerData[row]
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
     
 
     /*
