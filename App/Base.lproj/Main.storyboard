@@ -90,13 +90,19 @@
                                 <state key="normal" title="Name 1">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="firstNameButtonPressed:" destination="UH4-eW-DCM" eventType="touchUpInside" id="4ar-la-Crb"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xV-Aw-xG3">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xV-Aw-xG3">
                                 <rect key="frame" x="264" y="415" width="72" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Name 3">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="thirdNameButtonPressed:" destination="UH4-eW-DCM" eventType="touchUpInside" id="Uc6-Xk-3RT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruZ-ig-6z8">
                                 <rect key="frame" x="264" y="369" width="72" height="38"/>
@@ -104,13 +110,28 @@
                                 <state key="normal" title="Name 2">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="secondNameButtonPressed:" destination="UH4-eW-DCM" eventType="touchUpInside" id="TK7-pS-SHd"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMl-RC-mhq">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMl-RC-mhq">
                                 <rect key="frame" x="264" y="461" width="72" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Name 4">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="fourthNameButtonPressed:" destination="UH4-eW-DCM" eventType="touchUpInside" id="3NF-c3-bck"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HT-Ik-g7e">
+                                <rect key="frame" x="16" y="28" width="35" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ax7-C0-Nku" kind="show" id="Rih-fH-Dqh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,6 +150,13 @@
                             <constraint firstItem="XVi-sY-W9D" firstAttribute="top" secondItem="1yf-X2-Ier" secondAttribute="bottom" constant="8" symbolic="YES" id="vmX-pu-RN9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstNameButton" destination="Jxs-P1-ddm" id="Tf7-f6-V6L"/>
+                        <outlet property="fourthNameButton" destination="oMl-RC-mhq" id="bk8-WY-sfg"/>
+                        <outlet property="personImage" destination="bXt-LV-uYB" id="p5e-At-ebw"/>
+                        <outlet property="secondNameButton" destination="ruZ-ig-6z8" id="4hL-Il-pPI"/>
+                        <outlet property="thirdNameButton" destination="1xV-Aw-xG3" id="Ah1-eI-ozq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FvK-8r-b9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -238,25 +266,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="puY-Sl-9g1">
-                                <rect key="frame" x="16" y="72" width="160" height="160"/>
+                                <rect key="frame" x="16" y="72" width="157" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="853-9e-kf3"/>
-                                    <constraint firstAttribute="height" constant="160" id="ar4-vS-b23"/>
+                                    <constraint firstAttribute="height" constant="160" id="9Y5-jY-KWS"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="160" id="Jxg-Me-YVT"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlN-s3-wz8">
-                                <rect key="frame" x="184" y="72" width="51" height="21"/>
+                                <rect key="frame" x="181" y="72" width="50.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name Here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TXl-YZ-dfu">
-                                <rect key="frame" x="184" y="101" width="400" height="30"/>
+                                <rect key="frame" x="181" y="100" width="403" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Haj-eX-RqH">
-                                <rect key="frame" x="58" y="240" width="77" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Haj-eX-RqH">
+                                <rect key="frame" x="58" y="240" width="74" height="30"/>
                                 <state key="normal" title="Add Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -504,6 +532,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Rih-fH-Dqh"/>
         <segue reference="TAb-cP-wbt"/>
     </inferredMetricsTieBreakers>
 </document>

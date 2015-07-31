@@ -45,6 +45,7 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        personImage.image = nil
     }
     
     func displayPerson(person: Person?) {
@@ -71,7 +72,7 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
                 self.person!.info = infoTextView.text
                 self.person!.newPerson = false
                 if let image = personImage.image {
-                    self.person!.photo = UIImagePNGRepresentation(personImage.image)
+                    self.person!.photo = UIImagePNGRepresentation(personImage.image)//UIImagePNGRepresentation(AppHelper.scaleImage(personImage.image!, width: 320))
                 }
                 realm.write() {
                     realm.add(self.person!)
