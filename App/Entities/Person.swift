@@ -15,6 +15,7 @@ class Person: Object {
     dynamic var info: String = ""
     dynamic var photo: NSData?
     dynamic var newPerson: Bool = true
+    dynamic var usedInQuiz: Bool = false
     
 //  func UIImage
     

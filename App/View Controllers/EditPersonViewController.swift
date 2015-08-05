@@ -84,6 +84,7 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
                     self.person!.info = self.infoTextView.text
                     if let image = self.personImage.image {
                         self.person!.photo = UIImagePNGRepresentation(self.personImage.image)
+                        
                     }
 
                 }
@@ -112,6 +113,7 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         displayPerson(self.person)
         personImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        println(personImage.image?.imageOrientation)
     }
     
     /*

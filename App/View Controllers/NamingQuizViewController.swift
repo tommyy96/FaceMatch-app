@@ -9,8 +9,14 @@
 import UIKit
 import RealmSwift
 
-class FlashcardQuizViewController: UIViewController {
+class NamingQuizViewController: UIViewController {
 
+    @IBOutlet weak var personImage: UIImageView!
+    @IBOutlet weak var personNameTextField: UITextField!
+    @IBOutlet weak var submitButton: UIButton!
+    
+    
+    
     var people: Results<Person>!
     
     override func viewDidLoad() {
@@ -23,6 +29,14 @@ class FlashcardQuizViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setUpQuestion(){
+        
+    }
+    
+    @IBAction func submitButtonPressed(sender: AnyObject) {
+        
     }
     
 

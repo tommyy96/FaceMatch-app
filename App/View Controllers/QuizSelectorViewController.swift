@@ -9,59 +9,58 @@
 import UIKit
 import RealmSwift
 
-class QuizSelectorViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class QuizSelectorViewController: UIViewController {
     
-    @IBOutlet weak var quizSelectorPickerView: UIPickerView!
-    @IBOutlet weak var donePickingButton: UIButton!
+    @IBOutlet weak var quizSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var instructionsTextView: UITextView!
+    @IBOutlet weak var chooseButton: UIButton!
     
-    let pickerData = ["Matching Quiz", "Flashcard Quiz"]
-    
-    var chosenQuiz: String = "Matching Quiz"
     var people: Results<Person>!
+
+    let matchingQuizInstructions = "Matching Quiz Instructions: \nIn this quiz, an image of a person in your list will show up. You have to pick the right name out of several to get a point."
     
+    let namingQuizInstructions = "Naming Quiz Instructions: \nIn this quiz, an image of a person in your list will show up. You have to enter the person's name into the box to get a point."
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        instructionsTextView.text = matchingQuizInstructions
         let realm = Realm()
-        quizSelectorPickerView.dataSource = self
-        quizSelectorPickerView.delegate = self
         people = realm.objects(Person)
         if people.count <= 1 {
            performSegueWithIdentifier("noPeopleInList", sender: self)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func donePickingButtonPressed(sender: AnyObject) {
-        if(chosenQuiz == pickerData[0]) {
+    
+    @IBAction func indexChanged(sender: AnyObject) {
+        switch quizSegmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            instructionsTextView.text = matchingQuizInstructions
+        case 1:
+            instructionsTextView.text = namingQuizInstructions
+        default:
+            break
+        }
+    }
+    
+    
+    @IBAction func chooseButtonPressed(sender: AnyObject) {
+        switch quizSegmentedControl.selectedSegmentIndex
+        {
+        case 0:
             performSegueWithIdentifier("pickerToMatchingQuiz", sender: self)
+        case 1:
+            performSegueWithIdentifier("pickerToNamingQuiz", sender: self)
+        default:
+            break;
         }
-        else if(chosenQuiz == pickerData[1])  {
-            performSegueWithIdentifier("pickerToFlashcardQuiz", sender: self)
-        }
-    }
-
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return pickerData[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-         chosenQuiz = pickerData[row]
-    }
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-    
-    
-
     /*
     // MARK: - Navigation
 
