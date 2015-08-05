@@ -32,7 +32,9 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        displayPerson(self.person)
+        AppHelper.runInBackgroundWithBlock { () -> Void in
+            self.displayPerson(self.person)
+        }
     }
     
     
@@ -83,7 +85,7 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
                     self.person!.name = self.nameTextField.text
                     self.person!.info = self.infoTextView.text
                     if let image = self.personImage.image {
-                        self.person!.photo = UIImagePNGRepresentation(self.personImage.image)
+                        self.person!.photo = UIImageJPEGRepresentation(self.personImage.image, 1.0)//UIImagePNGRepresentation(self.personImage.image)
                         
                     }
 

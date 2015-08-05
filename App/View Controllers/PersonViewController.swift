@@ -24,15 +24,12 @@ class PersonViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        displayPerson(self.person)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        displayPerson(self.person)
         // Do any additional setup after loading the view.
+        displayPerson(person)
     }
 
     override func didReceiveMemoryWarning() {

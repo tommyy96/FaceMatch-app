@@ -33,6 +33,7 @@ class NamingQuizViewController: UIViewController {
                 usablePersonList.append(people[i])
             }
         }
+        println()
         if usablePersonList.count == 0 {
             for var i = 0; i < people.count; i++ {
                 realm.write {
