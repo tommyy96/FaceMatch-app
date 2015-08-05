@@ -24,6 +24,7 @@ class MatchingQuizViewController: UIViewController {
     var usablePersonList: [Person] = []
     var currentPerson: Person!
     var buttonPressed: Int!
+    var score: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,7 @@ class MatchingQuizViewController: UIViewController {
             if true {
                 usablePersonList.append(people[i])
                 realm.write {
-                    self.people[i].usedInQuiz = true
+                    self.people[i].usedInQuiz = false
                 }
             }
         }

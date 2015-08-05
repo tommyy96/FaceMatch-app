@@ -4,27 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-App-ConvenienceKit-ConvenienceKit.xcscheme</key>
+		<key>ConvenienceKit-ConvenienceKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-App-ConvenienceKit.xcscheme</key>
+		<key>ConvenienceKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-App-Realm.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-App-RealmSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-App-TPKeyboardAvoiding.xcscheme</key>
+		<key>Mixpanel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -34,35 +24,55 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RealmSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TPKeyboardAvoiding.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>053A39EFE7E0B643D98ABD24</key>
+		<key>167EDABF1D8EDC469C50293540367E6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2A3187DDA4E6CB740FD2D87D</key>
+		<key>5D218E971219E2E0EC87C65473953319</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3AEC1144159009BAFCE1BEBE</key>
+		<key>6AA8A745B7F726BA61C6362F5EF8CF6E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4B1C2CC0369E5E875AE90691</key>
+		<key>77284D0DA34AB78E9A957702DBB974D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B29BB77CCEBB4735C2A86A8F</key>
+		<key>8530DEDBC37DD75056E54EB064F88745</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA5480F660B71133FD966ACF</key>
+		<key>EC19C6B32D8D1845093C2F36A85BF697</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F68C0BFD52E598F826D4775B19537BA9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

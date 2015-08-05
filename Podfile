@@ -7,6 +7,7 @@ target 'App' do
 	pod 'RealmSwift'
 	pod 'TPKeyboardAvoiding'
 	pod 'ConvenienceKit'
+    pod 'Mixpanel'
 end
 
 target 'AppTests' do
