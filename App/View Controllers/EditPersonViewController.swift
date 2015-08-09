@@ -27,6 +27,7 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.navigationController?.navigationBarHidden = false
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -41,6 +42,9 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -48,6 +52,10 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         personImage.image = nil
+    }
+    
+    func DismissKeyboard(){
+        view.endEditing(true)
     }
     
     func displayPerson(person: Person?) {
@@ -74,7 +82,7 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
                 self.person!.info = infoTextView.text
                 self.person!.newPerson = false
                 if let image = personImage.image {
-                    self.person!.photo = UIImagePNGRepresentation(personImage.image)//UIImagePNGRepresentation(AppHelper.scaleImage(personImage.image!, width: 320))
+                    self.person!.photo = UIImageJPEGRepresentation(self.personImage.image, 1.0)//UIImagePNGRepresentation(AppHelper.scaleImage(personImage.image!, width: 320))
                 }
                 realm.write() {
                     realm.add(self.person!)
@@ -114,8 +122,13 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         displayPerson(self.person)
+        personImage.image = nil
         personImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         println(personImage.image?.imageOrientation)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        personImage.image = nil
     }
     
     /*

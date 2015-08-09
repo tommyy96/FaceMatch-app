@@ -10,8 +10,8 @@ import UIKit
 import RealmSwift
 import Realm
 
-class NamingQuizViewController: UIViewController {
-
+class NamingQuizViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var personNameTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
@@ -23,6 +23,15 @@ class NamingQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        personNameTextField.delegate = self
+        
+        personNameTextField.becomeFirstResponder()
+        
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
+        self.navigationItem.hidesBackButton = true
         let realm = Realm()
         people = realm.objects(Person)
         let numPeople = people.count
@@ -34,22 +43,15 @@ class NamingQuizViewController: UIViewController {
             }
         }
         println()
-        if usablePersonList.count == 0 {
-            for var i = 0; i < people.count; i++ {
-                realm.write {
-                    self.people[i].usedInQuiz = false
-                }
-            }
-        }
-        else {
-            setUpQuestion()
-        }
+        setUpQuestion()
     }
-
+    
+    func DismissKeyboard(){
+        view.endEditing(true)
+    }
+    
     override func viewDidAppear(animated: Bool) {
-        if usablePersonList.count == 0 {
-            performSegueWithIdentifier("namingToFinish", sender: self)
-        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,6 +67,13 @@ class NamingQuizViewController: UIViewController {
         realm.write {
             self.currentPerson.usedInQuiz = true
         }
+        if usablePersonList.count == 1 {
+            for var i = 0; i < people.count; i++ {
+                realm.write {
+                    self.people[i].usedInQuiz = false
+                }
+            }
+        }
     }
     
     @IBAction func submitButtonPressed(sender: AnyObject) {
@@ -72,26 +81,42 @@ class NamingQuizViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        personImage.image = nil
         if segue.identifier == "namingToAfterQuestion" {
             let afterQuestionViewController = segue.destinationViewController as! AfterQuestionViewController
             afterQuestionViewController.quizType = "naming"
+            if usablePersonList.count == 1 {
+                afterQuestionViewController.lastQuestion = true
+            }
             if personNameTextField.text == currentPerson.name {
+                score = score + 1
                 afterQuestionViewController.rightWrong = "Right"
+                afterQuestionViewController.score = score
             }
             else {
                 afterQuestionViewController.rightWrong = "Wrong"
+                afterQuestionViewController.score = score
             }
         }
     }
     
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
+}
+extension NamingQuizViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        
+        personNameTextField.resignFirstResponder()
+        
+        return false
+    }
 }

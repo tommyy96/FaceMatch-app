@@ -12,6 +12,8 @@ import RealmSwift
 
 class PersonListTableViewController: UITableViewController {
 
+    @IBOutlet var addPersonUIBarButton: UIBarButtonItem!
+    
     var people: Results<Person>! {
         didSet {
             // Whenever notes update, update the table view
@@ -19,12 +21,24 @@ class PersonListTableViewController: UITableViewController {
         }
     }
     
+    var peopleLoadQueue: dispatch_queue_t?
+    
     var selectedPerson: Person?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        peopleLoadQueue = dispatch_queue_create("peopleLoadQueue", DISPATCH_QUEUE_SERIAL)
         
+        //dispatch_async(peopleLoadQueue!) {
+            self.people = Realm().objects(Person).sorted("name", ascending: true)
+            for i in 0..<self.people.count {
+                Realm().write() {
+                    self.people[i].usedInQuiz = false
+                }
+            }
+       //}
+
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,10 +48,18 @@ class PersonListTableViewController: UITableViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
-        let realm = Realm()
-        people = realm.objects(Person).sorted("name", ascending: true)
+        peopleLoadQueue = dispatch_queue_create("peopleLoadQueue", DISPATCH_QUEUE_SERIAL)
+        
+        //dispatch_async(peopleLoadQueue!) {
+            self.people = Realm().objects(Person).sorted("name", ascending: true)
+        //}
+        //addPersonUIBarButton.enabled = true
         
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        addPersonUIBarButton.enabled = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,7 +106,7 @@ class PersonListTableViewController: UITableViewController {
         }
     }
 
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

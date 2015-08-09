@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B2B4CFB1B669AE4007876F4 /* QuizSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B4CFA1B669AE4007876F4 /* QuizSelectorViewController.swift */; };
+		3B2BB34A1B733E44003C29D5 /* FinishedQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BB3491B733E44003C29D5 /* FinishedQuizViewController.swift */; };
 		3B3ED16B1B580F6500E70BDC /* PersonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3ED16A1B580F6500E70BDC /* PersonListTableViewController.swift */; };
 		3B3ED1721B58133200E70BDC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3ED1711B58133200E70BDC /* Person.swift */; };
 		3B83E44C1B5719270037857E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B83E44B1B5719270037857E /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 		3BBDAA571B5982660026D0B8 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBDAA561B5982660026D0B8 /* PersonCell.swift */; };
 		3BD6C32C1B6C141F00ABC8F7 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD6C32B1B6C141F00ABC8F7 /* AppHelper.swift */; };
 		3BDA873D1B5997AC000344F0 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA873C1B5997AC000344F0 /* PersonViewController.swift */; };
+		3BDDF30E1B741BA30030DE33 /* NotEnoughPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDDF30D1B741BA30030DE33 /* NotEnoughPeopleViewController.swift */; };
 		3BE36D2B1B71EB3A0027B729 /* AfterQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE36D2A1B71EB3A0027B729 /* AfterQuestionViewController.swift */; };
 		55F6FD5CC3B1DAA12AC61B1F /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 577237697D7375DA79F1260F /* Pods_App.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -38,15 +40,16 @@
 /* Begin PBXFileReference section */
 		08BE76FEA0745C6D93267ADA /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 		3B2B4CFA1B669AE4007876F4 /* QuizSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSelectorViewController.swift; sourceTree = "<group>"; };
+		3B2BB3491B733E44003C29D5 /* FinishedQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedQuizViewController.swift; sourceTree = "<group>"; };
 		3B3ED16A1B580F6500E70BDC /* PersonListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonListTableViewController.swift; sourceTree = "<group>"; };
 		3B3ED1711B58133200E70BDC /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		3B83E4461B5719270037857E /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B83E4461B5719270037857E /* Recall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B83E44A1B5719270037857E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B83E44B1B5719270037857E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B83E4501B5719270037857E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B83E4521B5719270037857E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3B83E4551B5719270037857E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		3B83E45B1B5719270037857E /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B83E45B1B5719270037857E /* RecallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B83E4601B5719270037857E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B83E4611B5719270037857E /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		3B8ED97B1B699AFE007E6A57 /* NamingQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamingQuizViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		3BBDAA561B5982660026D0B8 /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		3BD6C32B1B6C141F00ABC8F7 /* AppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		3BDA873C1B5997AC000344F0 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		3BDDF30D1B741BA30030DE33 /* NotEnoughPeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotEnoughPeopleViewController.swift; sourceTree = "<group>"; };
 		3BE36D2A1B71EB3A0027B729 /* AfterQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterQuestionViewController.swift; sourceTree = "<group>"; };
 		577237697D7375DA79F1260F /* Pods_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDEF242E2D33C5C4723DE900 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 				3B8ED97B1B699AFE007E6A57 /* NamingQuizViewController.swift */,
 				3B8ED97D1B699B09007E6A57 /* MatchingQuizViewController.swift */,
 				3BE36D2A1B71EB3A0027B729 /* AfterQuestionViewController.swift */,
+				3B2BB3491B733E44003C29D5 /* FinishedQuizViewController.swift */,
+				3BDDF30D1B741BA30030DE33 /* NotEnoughPeopleViewController.swift */,
 			);
 			name = "View Controllers";
 			path = "App/View Controllers";
@@ -121,8 +127,8 @@
 		3B83E4471B5719270037857E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3B83E4461B5719270037857E /* App.app */,
-				3B83E45B1B5719270037857E /* AppTests.xctest */,
+				3B83E4461B5719270037857E /* Recall.app */,
+				3B83E45B1B5719270037857E /* RecallTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,9 +208,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3B83E4451B5719270037857E /* App */ = {
+		3B83E4451B5719270037857E /* Recall */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B83E4651B5719270037857E /* Build configuration list for PBXNativeTarget "App" */;
+			buildConfigurationList = 3B83E4651B5719270037857E /* Build configuration list for PBXNativeTarget "Recall" */;
 			buildPhases = (
 				FAC56D364FA037441263D378 /* Check Pods Manifest.lock */,
 				3B83E4421B5719270037857E /* Sources */,
@@ -217,14 +223,14 @@
 			);
 			dependencies = (
 			);
-			name = App;
+			name = Recall;
 			productName = App;
-			productReference = 3B83E4461B5719270037857E /* App.app */;
+			productReference = 3B83E4461B5719270037857E /* Recall.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3B83E45A1B5719270037857E /* AppTests */ = {
+		3B83E45A1B5719270037857E /* RecallTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B83E4681B5719270037857E /* Build configuration list for PBXNativeTarget "AppTests" */;
+			buildConfigurationList = 3B83E4681B5719270037857E /* Build configuration list for PBXNativeTarget "RecallTests" */;
 			buildPhases = (
 				3B83E4571B5719270037857E /* Sources */,
 				3B83E4581B5719270037857E /* Frameworks */,
@@ -235,9 +241,9 @@
 			dependencies = (
 				3B83E45D1B5719270037857E /* PBXTargetDependency */,
 			);
-			name = AppTests;
+			name = RecallTests;
 			productName = AppTests;
-			productReference = 3B83E45B1B5719270037857E /* AppTests.xctest */;
+			productReference = 3B83E45B1B5719270037857E /* RecallTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -259,7 +265,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3B83E4411B5719270037857E /* Build configuration list for PBXProject "App" */;
+			buildConfigurationList = 3B83E4411B5719270037857E /* Build configuration list for PBXProject "Recall" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -272,8 +278,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B83E4451B5719270037857E /* App */,
-				3B83E45A1B5719270037857E /* AppTests */,
+				3B83E4451B5719270037857E /* Recall */,
+				3B83E45A1B5719270037857E /* RecallTests */,
 			);
 		};
 /* End PBXProject section */
@@ -354,9 +360,11 @@
 				3BBDAA541B597A2D0026D0B8 /* EditPersonViewController.swift in Sources */,
 				3B2B4CFB1B669AE4007876F4 /* QuizSelectorViewController.swift in Sources */,
 				3BDA873D1B5997AC000344F0 /* PersonViewController.swift in Sources */,
+				3BDDF30E1B741BA30030DE33 /* NotEnoughPeopleViewController.swift in Sources */,
 				3BBDAA571B5982660026D0B8 /* PersonCell.swift in Sources */,
 				3B8ED97C1B699AFE007E6A57 /* NamingQuizViewController.swift in Sources */,
 				3BD6C32C1B6C141F00ABC8F7 /* AppHelper.swift in Sources */,
+				3B2BB34A1B733E44003C29D5 /* FinishedQuizViewController.swift in Sources */,
 				3B8ED97E1B699B09007E6A57 /* MatchingQuizViewController.swift in Sources */,
 				3B3ED1721B58133200E70BDC /* Person.swift in Sources */,
 				3B3ED16B1B580F6500E70BDC /* PersonListTableViewController.swift in Sources */,
@@ -378,7 +386,7 @@
 /* Begin PBXTargetDependency section */
 		3B83E45D1B5719270037857E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3B83E4451B5719270037857E /* App */;
+			target = 3B83E4451B5719270037857E /* Recall */;
 			targetProxy = 3B83E45C1B5719270037857E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -502,7 +510,7 @@
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Recall;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -523,7 +531,7 @@
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Recall;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -542,7 +550,7 @@
 				);
 				INFOPLIST_FILE = AppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RecallTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App.app/App";
 			};
 			name = Debug;
@@ -557,7 +565,7 @@
 				);
 				INFOPLIST_FILE = AppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RecallTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App.app/App";
 			};
 			name = Release;
@@ -565,7 +573,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3B83E4411B5719270037857E /* Build configuration list for PBXProject "App" */ = {
+		3B83E4411B5719270037857E /* Build configuration list for PBXProject "Recall" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B83E4631B5719270037857E /* Debug */,
@@ -574,7 +582,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B83E4651B5719270037857E /* Build configuration list for PBXNativeTarget "App" */ = {
+		3B83E4651B5719270037857E /* Build configuration list for PBXNativeTarget "Recall" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B83E4661B5719270037857E /* Debug */,
@@ -583,7 +591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B83E4681B5719270037857E /* Build configuration list for PBXNativeTarget "AppTests" */ = {
+		3B83E4681B5719270037857E /* Build configuration list for PBXNativeTarget "RecallTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B83E4691B5719270037857E /* Debug */,

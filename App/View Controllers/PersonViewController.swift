@@ -24,6 +24,8 @@ class PersonViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBarHidden = false
     }
     
     override func viewDidLoad() {
@@ -49,9 +51,11 @@ class PersonViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        personImageView.image = nil
         if segue.identifier == "editPerson" {
             let editPersonViewController = segue.destinationViewController as! EditPersonViewController
-            editPersonViewController.person = self.person        }
+            editPersonViewController.person = self.person
+        }
     }
     
     /*

@@ -17,9 +17,13 @@ class QuizSelectorViewController: UIViewController {
     
     var people: Results<Person>!
 
-    let matchingQuizInstructions = "Matching Quiz Instructions: \nIn this quiz, an image of a person in your list will show up. You have to pick the right name out of several to get a point. (this one is not functional yet)"
+    let matchingQuizInstructions = "Matching Quiz Instructions: \nIn this quiz, an image of a person in your list will show up. You have to pick the right name out of several to get a point."
     
-    let namingQuizInstructions = "Naming Quiz Instructions: \nIn this quiz, an image of a person in your list will show up. You have to enter the person's name into the box to get a point. (points currently do not work)"
+    let namingQuizInstructions = "Naming Quiz Instructions: \nIn this quiz, an image of a person in your list will show up. You have to enter the person's name into the box to get a point."
+    
+    override func viewWillAppear(animated: Bool) {        
+        self.navigationController?.navigationBarHidden = false
+   }
     
     override func viewDidLoad() {
         super.viewDidLoad()

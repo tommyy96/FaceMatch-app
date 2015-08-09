@@ -28,6 +28,9 @@ class MatchingQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.hidesBackButton = true
+        
         let realm = Realm()
         people = realm.objects(Person)
         if(people.count >= 3) {
@@ -36,17 +39,22 @@ class MatchingQuizViewController: UIViewController {
         if(people.count >= 4) {
             fourthNameButton.hidden = false
         }
-        let numPeople = people.count
-        for var i = 0; i < numPeople; i++ {
+        for i in 0..<people.count {
             allPeopleList.append(people[i])
-            if true {
+            println(people[i].usedInQuiz)
+            if !people[i].usedInQuiz {
                 usablePersonList.append(people[i])
-                realm.write {
-                    self.people[i].usedInQuiz = false
-                }
             }
         }
+        println()
         setUpQuestion()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if usablePersonList.count == 0 {
+            performSegueWithIdentifier("matchingToFinish", sender: self)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,40 +63,82 @@ class MatchingQuizViewController: UIViewController {
     }
     
     func setUpQuestion() {
+        let realm = Realm()
+        allPeopleList.shuffled()
         usablePersonList.shuffled()
         currentPerson = usablePersonList[0]
-        var names: ArraySlice<Person>
-        allPeopleList.shuffled()
-        if people.count > 3 {
-            var nameInChosen = false
+        personImage.image = UIImage(data: currentPerson.photo!)
+        var names: ArraySlice<Person>!
+        if allPeopleList.count >= 4 {
             names = allPeopleList[0...3]
-            for var i = 0; i < names.count; i++ {
-                if currentPerson.name == names[i] {
-                    nameInChosen = true
-                    break
+            if !contains(names, currentPerson) {
+                var pos: Int = Int(arc4random_uniform(UInt32(4)))
+                names.removeLast()
+                names.insert(currentPerson, atIndex: pos)
+            }
+            firstNameButton.enabled = false
+            firstNameButton.setTitle(names[0].name, forState: .Normal)
+            firstNameButton.enabled = true
+            println(names[0].name)
+            secondNameButton.enabled = false
+            secondNameButton.setTitle(names[1].name, forState: .Normal)
+            secondNameButton.enabled = true
+            println(names[1].name)
+            thirdNameButton.enabled = false
+            thirdNameButton.setTitle(names[2].name, forState: .Normal)
+            thirdNameButton.enabled = true
+            println(names[2].name)
+            fourthNameButton.enabled = false
+            fourthNameButton.setTitle(names[3].name, forState: .Normal)
+            fourthNameButton.enabled = true
+            println(names[3].name)
+        }
+        else if allPeopleList.count == 3 {
+            names = allPeopleList[0...2]
+            firstNameButton.titleLabel!.text = names[0].name
+            secondNameButton.titleLabel!.text = names[1].name
+            thirdNameButton.titleLabel!.text = names[2].name
+            firstNameButton.enabled = false
+            firstNameButton.setTitle(names[0].name, forState: .Normal)
+            firstNameButton.enabled = true
+            println(names[0].name)
+            secondNameButton.enabled = false
+            secondNameButton.setTitle(names[1].name, forState: .Normal)
+            secondNameButton.enabled = true
+            println(names[1].name)
+            thirdNameButton.enabled = false
+            thirdNameButton.setTitle(names[2].name, forState: .Normal)
+            thirdNameButton.enabled = true
+            println(names[2].name)
+        }
+        else if allPeopleList.count == 2 {
+            names = allPeopleList[0...1]
+            firstNameButton.titleLabel!.text = names[0].name
+            secondNameButton.titleLabel!.text = names[1].name
+            firstNameButton.enabled = false
+            firstNameButton.setTitle(names[0].name, forState: .Normal)
+            firstNameButton.enabled = true
+            println(names[0].name)
+            secondNameButton.enabled = false
+            secondNameButton.setTitle(names[1].name, forState: .Normal)
+            secondNameButton.enabled = true
+            println(names[1].name)
+
+        }
+        else {
+            names = allPeopleList[0...0]
+        }
+        
+        realm.write {
+            self.currentPerson.usedInQuiz = true
+        }
+        if usablePersonList.count == 1 {
+            for var i = 0; i < people.count; i++ {
+                realm.write {
+                    self.people[i].usedInQuiz = false
                 }
             }
-            if !nameInChosen {
-                names = allPeopleList[0...2]
-                names.append(currentPerson)
-            }
-            firstNameButton.titleLabel?.text = names[0].name
-            secondNameButton.titleLabel?.text = names[1].name
-            thirdNameButton.titleLabel?.text = names[2].name
-            fourthNameButton.titleLabel?.text = names[3].name
         }
-        else if people.count == 3 {
-            names = allPeopleList[0...2]
-            firstNameButton.titleLabel?.text = names[0].name
-            secondNameButton.titleLabel?.text = names[1].name
-            thirdNameButton.titleLabel?.text = names[2].name
-        }
-        else if people.count == 2 {
-            names = allPeopleList[0...1]
-            firstNameButton.titleLabel?.text = names[0].name
-            secondNameButton.titleLabel?.text = names[1].name
-        }
-        personImage.image = UIImage(data: currentPerson.photo!)
     }
     
     @IBAction func firstNameButtonPressed(sender: AnyObject) {
@@ -112,12 +162,17 @@ class MatchingQuizViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        personImage.image = nil
         if segue.identifier == "matchingToAfterQuestion" {
             let afterQuestionViewController = segue.destinationViewController as! AfterQuestionViewController
             afterQuestionViewController.quizType = "matching"
+            if usablePersonList.count == 1 {
+                afterQuestionViewController.lastQuestion = true
+            }
             if buttonPressed == 1 {
                 if firstNameButton.titleLabel?.text == currentPerson.name {
                     afterQuestionViewController.rightWrong = "Right"
+                    score = score + 1
                 }
                 else {
                     afterQuestionViewController.rightWrong = "Wrong"
@@ -126,6 +181,7 @@ class MatchingQuizViewController: UIViewController {
             else if buttonPressed == 2 {
                 if secondNameButton.titleLabel?.text == currentPerson.name {
                     afterQuestionViewController.rightWrong = "Right"
+                    score = score + 1
                 }
                 else {
                     afterQuestionViewController.rightWrong = "Wrong"
@@ -134,6 +190,7 @@ class MatchingQuizViewController: UIViewController {
             else if buttonPressed == 3 {
                 if thirdNameButton.titleLabel?.text == currentPerson.name {
                     afterQuestionViewController.rightWrong = "Right"
+                    score = score + 1
                 }
                 else {
                     afterQuestionViewController.rightWrong = "Wrong"
@@ -142,11 +199,17 @@ class MatchingQuizViewController: UIViewController {
             else if buttonPressed == 4 {
                 if fourthNameButton.titleLabel?.text == currentPerson.name {
                     afterQuestionViewController.rightWrong = "Right"
+                    score = score + 1
                 }
                 else {
                     afterQuestionViewController.rightWrong = "Wrong"
                 }
             }
+            afterQuestionViewController.score = self.score
+        }
+        if segue.identifier == "matchingToFinish" {
+            let finishedQuizViewContoller = segue.destinationViewController as! FinishedQuizViewController
+            finishedQuizViewContoller.score = self.score
         }
     }
     

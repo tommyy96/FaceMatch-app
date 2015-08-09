@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3B83E4451B5719270037857E"
-               BuildableName = "App.app"
-               BlueprintName = "App"
-               ReferencedContainer = "container:App.xcodeproj">
+               BuildableName = "Recall.app"
+               BlueprintName = "Recall"
+               ReferencedContainer = "container:Recall.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3B83E45A1B5719270037857E"
-               BuildableName = "AppTests.xctest"
-               BlueprintName = "AppTests"
-               ReferencedContainer = "container:App.xcodeproj">
+               BuildableName = "RecallTests.xctest"
+               BlueprintName = "RecallTests"
+               ReferencedContainer = "container:Recall.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3B83E45A1B5719270037857E"
-               BuildableName = "AppTests.xctest"
-               BlueprintName = "AppTests"
-               ReferencedContainer = "container:App.xcodeproj">
+               BuildableName = "RecallTests.xctest"
+               BlueprintName = "RecallTests"
+               ReferencedContainer = "container:Recall.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3B83E4451B5719270037857E"
-            BuildableName = "App.app"
-            BlueprintName = "App"
-            ReferencedContainer = "container:App.xcodeproj">
+            BuildableName = "Recall.app"
+            BlueprintName = "Recall"
+            ReferencedContainer = "container:Recall.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3B83E4451B5719270037857E"
-            BuildableName = "App.app"
-            BlueprintName = "App"
-            ReferencedContainer = "container:App.xcodeproj">
+            BuildableName = "Recall.app"
+            BlueprintName = "Recall"
+            ReferencedContainer = "container:Recall.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3B83E4451B5719270037857E"
-            BuildableName = "App.app"
-            BlueprintName = "App"
-            ReferencedContainer = "container:App.xcodeproj">
+            BuildableName = "Recall.app"
+            BlueprintName = "Recall"
+            ReferencedContainer = "container:Recall.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
