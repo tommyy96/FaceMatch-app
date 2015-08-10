@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class AppHelper: NSObject {
     static func scaleImage(image: UIImage, width: CGFloat) -> UIImage {
         let oldWidth = image.size.width
@@ -29,3 +30,4 @@ class AppHelper: NSObject {
     
     typealias noop = () -> Void
 }
+

@@ -11,8 +11,9 @@ import UIKit
 import RealmSwift
 
 class EditPersonViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
+    
     @IBOutlet weak var doneEditingButton: UIBarButtonItem!
+    @IBOutlet weak var addPhotoButtonOnPhoto: UIButton!
     @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var infoTextView: UITextView!
@@ -33,9 +34,9 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        AppHelper.runInBackgroundWithBlock { () -> Void in
-            self.displayPerson(self.person)
-        }
+        //AppHelper.runInBackgroundWithBlock { () -> Void in
+        self.displayPerson(self.person)
+        //}
     }
     
     
@@ -47,7 +48,7 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -62,11 +63,9 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
         if let person = person, nameTextField = nameTextField, infoTextView = infoTextView, personImage = personImage {
             nameTextField.text = person.name
             infoTextView.text = person.info
-            if let image = person.photo {
-                if !showedPicture {
-                    personImage.image = UIImage(data: person.photo!)
-                    showedPicture = true
-                }
+            if !showedPicture {
+                personImage.image = UIImage(data: person.photo)
+                showedPicture = true
             }
         }
         else {
@@ -93,10 +92,9 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
                     self.person!.name = self.nameTextField.text
                     self.person!.info = self.infoTextView.text
                     if let image = self.personImage.image {
-                        self.person!.photo = UIImageJPEGRepresentation(self.personImage.image, 1.0)//UIImagePNGRepresentation(self.personImage.image)
-                        
+                        self.person!.photo = UIImageJPEGRepresentation(self.personImage.image, 1.0)
                     }
-
+                    
                 }
             }
             navigationController?.popToRootViewControllerAnimated(true)
@@ -124,7 +122,8 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
         displayPerson(self.person)
         personImage.image = nil
         personImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        println(personImage.image?.imageOrientation)
+        personImage.hidden = false
+        addPhotoButtonOnPhoto.hidden = true
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -133,12 +132,12 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
     
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

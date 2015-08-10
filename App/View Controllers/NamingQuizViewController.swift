@@ -63,7 +63,7 @@ class NamingQuizViewController: UIViewController, UITextFieldDelegate {
         let realm = Realm()
         usablePersonList.shuffled()
         currentPerson = usablePersonList[0]
-        personImage.image = UIImage(data: currentPerson.photo!)
+        personImage.image = UIImage(data: currentPerson.photo)
         realm.write {
             self.currentPerson.usedInQuiz = true
         }

@@ -13,7 +13,7 @@ class Person: Object {
    
     dynamic var name: String = ""
     dynamic var info: String = ""
-    dynamic var photo: NSData?
+    dynamic var photo: NSData = UIImagePNGRepresentation(UIImage(named: "user.png"))
     dynamic var newPerson: Bool = true
     dynamic var usedInQuiz: Bool = false
     

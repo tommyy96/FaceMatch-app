@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class PersonViewController: UIViewController {
-
+    
     
     @IBOutlet weak var personImageView: UIImageView!
     @IBOutlet weak var personInfoTextView: UITextView!
@@ -33,7 +33,7 @@ class PersonViewController: UIViewController {
         // Do any additional setup after loading the view.
         displayPerson(person)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,9 +44,7 @@ class PersonViewController: UIViewController {
         if let person = person , personNameLabel = personNameLabel, personInfoTextView = personInfoTextView, personImageView = personImageView {
             self.personNameLabel.text = person.name
             self.personInfoTextView.text = person.info
-            if let image = person.photo {
-                self.personImageView.image = UIImage(data: person.photo!)
-            }
+            self.personImageView.image = UIImage(data: person.photo)
         }
     }
     
@@ -60,12 +58,12 @@ class PersonViewController: UIViewController {
     
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

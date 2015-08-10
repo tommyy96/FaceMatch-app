@@ -10,15 +10,15 @@ import UIKit
 import Foundation
 
 class PersonCell: UITableViewCell {
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -29,14 +29,12 @@ class PersonCell: UITableViewCell {
         didSet {
             if let person = person, nameLabel = nameLabel, personImage = personImage {
                 self.nameLabel.text = person.name
-                if let image = person.photo {
-                    self.personImage.image = UIImage(data: person.photo!)
-                }
+                self.personImage.image = UIImage(data: person.photo)
             }
             else {
                 self.nameLabel.text = "error"
             }
         }
     }
-
+    
 }

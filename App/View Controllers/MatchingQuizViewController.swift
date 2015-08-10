@@ -67,7 +67,7 @@ class MatchingQuizViewController: UIViewController {
         allPeopleList.shuffled()
         usablePersonList.shuffled()
         currentPerson = usablePersonList[0]
-        personImage.image = UIImage(data: currentPerson.photo!)
+        personImage.image = UIImage(data: currentPerson.photo)
         var names: ArraySlice<Person>!
         if allPeopleList.count >= 4 {
             names = allPeopleList[0...3]
