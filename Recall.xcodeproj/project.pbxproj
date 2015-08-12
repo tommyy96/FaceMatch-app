@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,7 +24,8 @@
 		3BDA873D1B5997AC000344F0 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA873C1B5997AC000344F0 /* PersonViewController.swift */; };
 		3BDDF30E1B741BA30030DE33 /* NotEnoughPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDDF30D1B741BA30030DE33 /* NotEnoughPeopleViewController.swift */; };
 		3BE36D2B1B71EB3A0027B729 /* AfterQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE36D2A1B71EB3A0027B729 /* AfterQuestionViewController.swift */; };
-		55F6FD5CC3B1DAA12AC61B1F /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 577237697D7375DA79F1260F /* Pods_App.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3BE7C6071B7AADD800119749 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BE7C6061B7AADD800119749 /* Settings.bundle */; };
+		DBA154A9F93F71CFBC1D60FD /* Pods_Recall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC5B72EC8325D5BF3D13DB9 /* Pods_Recall.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08BE76FEA0745C6D93267ADA /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 		3B2B4CFA1B669AE4007876F4 /* QuizSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSelectorViewController.swift; sourceTree = "<group>"; };
 		3B2BB3491B733E44003C29D5 /* FinishedQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedQuizViewController.swift; sourceTree = "<group>"; };
 		3B3ED16A1B580F6500E70BDC /* PersonListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonListTableViewController.swift; sourceTree = "<group>"; };
@@ -56,12 +56,21 @@
 		3B8ED97D1B699B09007E6A57 /* MatchingQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingQuizViewController.swift; sourceTree = "<group>"; };
 		3BBDAA531B597A2D0026D0B8 /* EditPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPersonViewController.swift; sourceTree = "<group>"; };
 		3BBDAA561B5982660026D0B8 /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		3BD1CC671B7AB81200A614E2 /* Pods_Recall.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Recall.framework; path = "Pods/../build/Debug-iphoneos/Pods_Recall.framework"; sourceTree = "<group>"; };
+		3BD1CC681B7AB81200A614E2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Realm.framework"; sourceTree = "<group>"; };
 		3BD6C32B1B6C141F00ABC8F7 /* AppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		3BDA873C1B5997AC000344F0 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		3BDDF30D1B741BA30030DE33 /* NotEnoughPeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotEnoughPeopleViewController.swift; sourceTree = "<group>"; };
 		3BE36D2A1B71EB3A0027B729 /* AfterQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterQuestionViewController.swift; sourceTree = "<group>"; };
-		577237697D7375DA79F1260F /* Pods_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDEF242E2D33C5C4723DE900 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
+		3BE7C6061B7AADD800119749 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		3BE7C6081B7AB1DF00119749 /* ConvenienceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConvenienceKit.framework; path = "Pods/../build/Debug-iphoneos/ConvenienceKit.framework"; sourceTree = "<group>"; };
+		3BE7C60A1B7AB1E400119749 /* Mixpanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mixpanel.framework; path = "Pods/../build/Debug-iphoneos/Mixpanel.framework"; sourceTree = "<group>"; };
+		3BE7C60B1B7AB1E400119749 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Realm.framework"; sourceTree = "<group>"; };
+		3BE7C60C1B7AB1E400119749 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift.framework"; sourceTree = "<group>"; };
+		3BE7C60D1B7AB1E400119749 /* TPKeyboardAvoiding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPKeyboardAvoiding.framework; path = "Pods/../build/Debug-iphoneos/TPKeyboardAvoiding.framework"; sourceTree = "<group>"; };
+		5AC5B72EC8325D5BF3D13DB9 /* Pods_Recall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74ECE0D36A0F92742AE35810 /* Pods-Recall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recall.release.xcconfig"; path = "Pods/Target Support Files/Pods-Recall/Pods-Recall.release.xcconfig"; sourceTree = "<group>"; };
+		77C50DCCE8EE2809768B6319 /* Pods-Recall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Recall/Pods-Recall.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55F6FD5CC3B1DAA12AC61B1F /* Pods_App.framework in Frameworks */,
+				DBA154A9F93F71CFBC1D60FD /* Pods_Recall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +121,7 @@
 		3B83E43D1B5719270037857E = {
 			isa = PBXGroup;
 			children = (
+				3BE7C6061B7AADD800119749 /* Settings.bundle */,
 				3BD6C32A1B6C140A00ABC8F7 /* Helpers */,
 				3BBDAA551B5982440026D0B8 /* Views */,
 				3B3ED1701B58132600E70BDC /* Entities */,
@@ -191,7 +201,14 @@
 		828CCCE83534F149EB987D48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				577237697D7375DA79F1260F /* Pods_App.framework */,
+				3BD1CC671B7AB81200A614E2 /* Pods_Recall.framework */,
+				3BD1CC681B7AB81200A614E2 /* Realm.framework */,
+				3BE7C60A1B7AB1E400119749 /* Mixpanel.framework */,
+				3BE7C60B1B7AB1E400119749 /* Realm.framework */,
+				3BE7C60C1B7AB1E400119749 /* RealmSwift.framework */,
+				3BE7C60D1B7AB1E400119749 /* TPKeyboardAvoiding.framework */,
+				3BE7C6081B7AB1DF00119749 /* ConvenienceKit.framework */,
+				5AC5B72EC8325D5BF3D13DB9 /* Pods_Recall.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,8 +216,8 @@
 		8C0911E7BE5468D9082F8879 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				08BE76FEA0745C6D93267ADA /* Pods-App.debug.xcconfig */,
-				CDEF242E2D33C5C4723DE900 /* Pods-App.release.xcconfig */,
+				77C50DCCE8EE2809768B6319 /* Pods-Recall.debug.xcconfig */,
+				74ECE0D36A0F92742AE35810 /* Pods-Recall.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -216,8 +233,8 @@
 				3B83E4421B5719270037857E /* Sources */,
 				3B83E4431B5719270037857E /* Frameworks */,
 				3B83E4441B5719270037857E /* Resources */,
-				C0BC3BF5ECF1415AAC0BA44C /* Embed Pods Frameworks */,
-				53287F634A3800655B6E7F69 /* Copy Pods Resources */,
+				714DD449C8877FC630E8470B /* Copy Pods Resources */,
+				2873FFB7A503692CB317C867 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,7 +251,6 @@
 			buildPhases = (
 				3B83E4571B5719270037857E /* Sources */,
 				3B83E4581B5719270037857E /* Frameworks */,
-				3B83E4591B5719270037857E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -266,7 +282,7 @@
 				};
 			};
 			buildConfigurationList = 3B83E4411B5719270037857E /* Build configuration list for PBXProject "Recall" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -289,38 +305,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE7C6071B7AADD800119749 /* Settings.bundle in Resources */,
 				3B83E4511B5719270037857E /* Main.storyboard in Resources */,
 				3B83E4561B5719270037857E /* LaunchScreen.xib in Resources */,
 				3B83E4531B5719270037857E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3B83E4591B5719270037857E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		53287F634A3800655B6E7F69 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App/Pods-App-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C0BC3BF5ECF1415AAC0BA44C /* Embed Pods Frameworks */ = {
+		2873FFB7A503692CB317C867 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -332,7 +327,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App/Pods-App-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Recall/Pods-Recall-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		714DD449C8877FC630E8470B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Recall/Pods-Recall-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FAC56D364FA037441263D378 /* Check Pods Manifest.lock */ = {
@@ -428,7 +438,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiaoqiang Yang (NHU8FJV3RY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiaoqiang Yang (NHU8FJV3RY)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -473,7 +484,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiaoqiang Yang (NHU8FJV3RY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiaoqiang Yang (NHU8FJV3RY)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -496,16 +508,17 @@
 		};
 		3B83E4661B5719270037857E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08BE76FEA0745C6D93267ADA /* Pods-App.debug.xcconfig */;
+			baseConfigurationReference = 74ECE0D36A0F92742AE35810 /* Pods-Recall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiaoqiang Yang (NHU8FJV3RY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiaoqiang Yang (NHU8FJV3RY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/tommyyang/Desktop/make,
 					school/MakeSchoolNotes,
 					"$(PROJECT_DIR)/App/Frameworks",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -517,16 +530,17 @@
 		};
 		3B83E4671B5719270037857E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDEF242E2D33C5C4723DE900 /* Pods-App.release.xcconfig */;
+			baseConfigurationReference = 74ECE0D36A0F92742AE35810 /* Pods-Recall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xiaoqiang Yang (NHU8FJV3RY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiaoqiang Yang (NHU8FJV3RY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/tommyyang/Desktop/make,
 					school/MakeSchoolNotes,
 					"$(PROJECT_DIR)/App/Frameworks",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -538,6 +552,7 @@
 		};
 		3B83E4691B5719270037857E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74ECE0D36A0F92742AE35810 /* Pods-Recall.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -557,6 +572,7 @@
 		};
 		3B83E46A1B5719270037857E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74ECE0D36A0F92742AE35810 /* Pods-Recall.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

@@ -66,6 +66,7 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
             if !showedPicture {
                 personImage.image = UIImage(data: person.photo)
                 showedPicture = true
+                addPhotoButtonOnPhoto.hidden = true
             }
         }
         else {
@@ -83,6 +84,9 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
                 if let image = personImage.image {
                     self.person!.photo = UIImageJPEGRepresentation(self.personImage.image, 1.0)//UIImagePNGRepresentation(AppHelper.scaleImage(personImage.image!, width: 320))
                 }
+                else {
+                    self.person!.photo = UIImagePNGRepresentation(UIImage(named: "user"))
+                }
                 realm.write() {
                     realm.add(self.person!)
                 }
@@ -94,10 +98,14 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
                     if let image = self.personImage.image {
                         self.person!.photo = UIImageJPEGRepresentation(self.personImage.image, 1.0)
                     }
-                    
                 }
             }
             navigationController?.popToRootViewControllerAnimated(true)
+        }
+        else {
+            let alertController = UIAlertController(title: "Not enough information", message: "Please fill out all of the empty fields", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
@@ -105,10 +113,10 @@ class EditPersonViewController: UIViewController, UINavigationControllerDelegate
         let realm = Realm()
         realm.write(){
             if let name = self.nameTextField.text {
-                self.person!.name = self.nameTextField.text
+                self.person!.name = name
             }
             if let info = self.infoTextView.text {
-                self.person!.info = self.infoTextView.text
+                self.person!.info = info
             }
         }
         self.imagePicker =  UIImagePickerController()

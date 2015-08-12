@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Mixpanel
 
 class QuizSelectorViewController: UIViewController {
     
@@ -17,9 +18,9 @@ class QuizSelectorViewController: UIViewController {
     
     var people: Results<Person>!
 
-    let matchingQuizInstructions = "Matching Quiz Instructions: \nIn this quiz, an image of a person in your list will show up. You have to pick the right name out of several to get a point."
+    let matchingQuizInstructions = "Multiple Choice Instructions: \nIn this quiz, an image of a person in your list will show up. You have to pick the right name out of several to get a point."
     
-    let namingQuizInstructions = "Naming Quiz Instructions: \nIn this quiz, an image of a person in your list will show up. You have to enter the person's name into the box to get a point."
+    let namingQuizInstructions = "Naming Instructions: \nIn this quiz, an image of a person in your list will show up. You have to enter the person's name into the box to get a point."
     
     override func viewWillAppear(animated: Bool) {        
         self.navigationController?.navigationBarHidden = false
@@ -54,6 +55,9 @@ class QuizSelectorViewController: UIViewController {
     
     
     @IBAction func chooseButtonPressed(sender: AnyObject) {
+        Mixpanel.sharedInstanceWithToken("c712ef1b8da358a2c58d4a5269ca1fb6")
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("Quiz entered")
         switch quizSegmentedControl.selectedSegmentIndex
         {
         case 0:

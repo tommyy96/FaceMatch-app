@@ -104,6 +104,7 @@ class PersonListTableViewController: UITableViewController {
             let personViewController = segue.destinationViewController as! PersonViewController
             personViewController.person = selectedPerson
         }
+        navigationItem.hidesBackButton = true
     }
 
     

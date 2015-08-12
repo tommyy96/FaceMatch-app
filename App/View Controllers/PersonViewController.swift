@@ -15,6 +15,7 @@ class PersonViewController: UIViewController {
     @IBOutlet weak var personImageView: UIImageView!
     @IBOutlet weak var personInfoTextView: UITextView!
     @IBOutlet weak var personNameLabel: UILabel!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
     
     var person: Person? {
         didSet {
@@ -37,7 +38,6 @@ class PersonViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        personImageView.image = nil
     }
     
     func displayPerson(person: Person?) {
@@ -48,12 +48,24 @@ class PersonViewController: UIViewController {
         }
     }
     
+    @IBAction func deleteButtonPressed(sender: AnyObject) {
+        let realm = Realm()
+        
+        realm.write() {
+            realm.delete(self.person!)
+        }
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        personImageView.image = nil
         if segue.identifier == "editPerson" {
             let editPersonViewController = segue.destinationViewController as! EditPersonViewController
             editPersonViewController.person = self.person
         }
+        else {
+            //personImageView.image = nil
+        }
+
     }
     
     /*

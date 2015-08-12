@@ -4,22 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ConvenienceKit-ConvenienceKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ConvenienceKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Mixpanel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-App.xcscheme</key>
+		<key>Pods-Recall.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,22 +32,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>167EDABF1D8EDC469C50293540367E6A</key>
+		<key>5237C9D9E55EFD70E9853FC5CBB56295</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D218E971219E2E0EC87C65473953319</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6AA8A745B7F726BA61C6362F5EF8CF6E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>77284D0DA34AB78E9A957702DBB974D6</key>
+		<key>531E60A16C044D81B7467AED47A0793B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EC19C6B32D8D1845093C2F36A85BF697</key>
+		<key>E5C449AE0CAD62E51A6E2A827D0AF6E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F68C0BFD52E598F826D4775B19537BA9</key>
+		<key>EC19C6B32D8D1845093C2F36A85BF697</key>
 		<dict>
 			<key>primary</key>
 			<true/>
